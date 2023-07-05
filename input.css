@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h5 {
+    @apply text-3xl absolute bottom-4 text-white w-52 px-6 md:px-10 md:bottom-8 hover:scale-110 group-hover:text-black duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply border-2 border-black font-bold py-2 px-12 my-0 tracking-widest uppercase hover:text-white hover:bg-black;
+  }
+}
+
+.item-container {
+  @apply flex flex-col w-full text-2xl uppercase justify-between md:flex-row space-y-4 md:space-y-0 space-x-6 mb-6;
+}
+
+.item {
+  @apply relative overflow-hidden md:w-1/4;
+}
+
+.gradient {
+  @apply absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
+}
+
+#nav {
+  background-image: url('../images/desktop/image-hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 576px) {
+  #nav {
+    background-image: url('../images/mobile/image-hero.jpg');
+    background-position: center;
+  }
+}
+
+.hamburger {
+   height: 24px;
+   width: 24px;
+   position: relative;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.line-one,
+.line-two,
+.line-three {
+  position: absolute;
+  background: white;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.line-two {
+  transform: translateY(7px);
+}
+
+.line-three {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.open .line-one {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .line-two {
+  display: none;
+}
+
+.open .line-three {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
